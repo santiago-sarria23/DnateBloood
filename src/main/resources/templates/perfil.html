@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil del Donante</title>
+    <link rel="stylesheet" href="css/login_register.css">
+</head>
+<body>
+    <div class="main-container registro_v">
+        <nav class="navbar">
+            <ul class="navbar-menu">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/info">Información</a></li>
+                <li><a href="/contacto">Contáctanos</a></li>
+                <li><a href="/" class="navbar-btn">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+
+        <div class="formulario">
+            <h1>¡Bienvenido, <span th:text="${usuario.username}"></span>!</h1>
+            <hr><br>
+            <p>Tu correo registrado es: <span th:text="${usuario.email}"></span></p>
+            <p>Gracias por registrarte como donante de sangre ❤️</p>
+        </div>
+    </div>
+</body>
+</html>

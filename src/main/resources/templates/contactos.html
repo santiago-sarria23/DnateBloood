@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactos - Donate Blood</title>
+    <link rel="stylesheet" href="css/login_register.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f36060;
+            color: #333;
+        }
+
+        header {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url('https://www.shutterstock.com/image-vector/poster-illustration-campaign-world-blood-600nw-2631405425.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            color: #b30000;
+            border-left: 6px solid #e63946;
+            padding-left: 10px;
+            margin-top: 25px;
+        }
+
+        p {
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        .tarjeta {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-top: 25px;
+            transition: transform 0.2s;
+        }
+
+        .tarjeta:hover {
+            transform: scale(1.02);
+        }
+
+        .tarjeta h3 {
+            color: #b30000;
+            margin-top: 0;
+        }
+
+        .tarjeta p {
+            margin: 8px 0;
+        }
+
+        .botones {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .boton {
+            background-color: #b30000;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .boton:hover {
+            background-color: #e63946;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #b30000, #e63946);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 60px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+      <ul class="navbar-menu">
+          <li><a href="/">Inicio</a></li>
+          <li class="dropdown">
+              <a href="#" class="dropbtn">Usted es</a>
+              <ul class="dropdown-content">
+                  <li><a href="/logincentro">Centro Médico</a></li>
+                  <li><a href="/loginbanco">Banco de Sangre</a></li>
+                  <li><a href="/administrador">Administrador</a></li>
+              </ul>
+          </li>
+          <li><a href="/info">Información</a></li>
+          <li><a href="/contacto">Contáctanos</a></li>
+          <li><a href="/" class="navbar-btn">Inscríbete aquí</a></li>
+      </ul>
+  </nav>
+    <header>
+        <h1>Contáctanos - Donate Blood</h1>
+    </header>
+
+    <main>
+        <h2>🩸 Bancos de Sangre en Cartagena</h2>
+        <p>
+            Si deseas donar sangre o conocer más sobre el proceso de donación, 
+            puedes comunicarte directamente con los bancos de sangre disponibles en la ciudad de <strong>Cartagena</strong>. 
+            Aquí encontrarás sus direcciones, teléfonos y enlaces para ver la ubicación exacta en el mapa.
+        </p>
+
+        <!-- Banco 1 -->
+        <div class="tarjeta">
+            <h3>Banco de Sangre Hemocaribe</h3>
+            <p><strong>Dirección:</strong> Transversal 54 #30, Local 9, Cartagena</p>
+            <p><strong>Teléfono:</strong> 310 456 7890</p>
+            <p><strong>Descripción:</strong> Hemocaribe es uno de los bancos más reconocidos en la ciudad.</p>
+            <div class="botones">
+                <button class="boton">Enviar mensaje</button>
+                <a href="https://www.google.com/maps/place/Transversal+54+%2330,+Local+9,+Cartagena" target="_blank" class="boton">Ver ubicación</a>
+            </div>
+        </div>
+
+        <!-- Banco 2 -->
+        <div class="tarjeta">
+            <h3>Banco de Sangre “Ángela Mejía Dizeo Ltda”</h3>
+            <p><strong>Dirección:</strong> Calle del Biffi No 31-153, Barrio Providencia, Cartagena</p>
+            <p><strong>Teléfono:</strong> 317 221 4456</p>
+            <p><strong>Descripción:</strong> Institución privada dedicada a la recolección y distribución de sangre.</p>
+            <div class="botones">
+                <button class="boton">Enviar mensaje</button>
+                <a href="https://www.google.com/maps/place/Calle+del+Biffi+No+31-153,+Cartagena" target="_blank" class="boton">Ver ubicación</a>
+            </div>
+        </div>
+
+        <!-- Banco 3 -->
+        <div class="tarjeta">
+            <h3>Nuevo Hospital Bocagrande - Banco de Sangre</h3>
+            <p><strong>Dirección:</strong> Calle 5 #6-49, Bocagrande, Cartagena</p>
+            <p><strong>Teléfono:</strong> 320 345 8890</p>
+            <p><strong>Descripción:</strong> Banco de sangre del Nuevo Hospital Bocagrande, disponible para donaciones y urgencias.</p>
+            <div class="botones">
+                <button class="boton">Enviar mensaje</button>
+                <a href="https://www.google.com/maps/place/Calle+5+%236-49,+Bocagrande,+Cartagena" target="_blank" class="boton">Ver ubicación</a>
+            </div>
+        </div>
+
+        <!-- Banco 4 - Cruz Roja -->
+        <div class="tarjeta">
+            <h3>Cruz Roja Colombiana Seccional Bolívar</h3>
+            <p><strong>Dirección:</strong> Calle 47D #30-47, Barrio España, Cartagena</p>
+            <p><strong>Teléfono:</strong> 317 218 0488</p>
+            <p><strong>Descripción:</strong> Organización de voluntariado con banco de sangre y servicios médicos para la comunidad.</p>
+            <div class="botones">
+                <button class="boton">Enviar mensaje</button>
+                <a href="https://www.google.com/maps/place/Calle+47D+%2330-47,+Cartagena,+Bol%C3%ADvar" target="_blank" class="boton">Ver ubicación</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Proyecto Donate Blood © 2025 - Hecho por: Luis Manuel Miranda, Santiago Pérez, Jose Orozco, Santiago Sarria</p>
+    </footer>
+    <script>
+
+    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+        var btn = dropdown.querySelector('.dropbtn');
+        var content = dropdown.querySelector('.dropdown-content');
+            var hideTimeout;
+            dropdown.addEventListener('mouseenter', function() {
+                clearTimeout(hideTimeout);
+                content.style.display = 'block';
+            });
+            dropdown.addEventListener('mouseleave', function() {
+                hideTimeout = setTimeout(function() {
+                    content.style.display = 'none';
+                }, 1000);
+            });
+            btn.addEventListener('click', function(e) {
+                var isOpen = content.style.display === 'block';
+                document.querySelectorAll('.dropdown-content').forEach(function(dc) {
+                    dc.style.display = 'none';
+            });
+            content.style.display = isOpen ? 'none' : 'block';
+            e.preventDefault();
+            e.stopPropagation();
+            content.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    content.style.display = 'none';
+                });
+            });
+        });
+    });
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown-content').forEach(function(dc) {
+                dc.style.display = 'none';
+            });
+        }
+    });
+    </script>
+</body>
+</html>

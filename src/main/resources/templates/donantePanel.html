@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff4b5c, #ffccd5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(0,0,0,0.7);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .botones {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .boton {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #fff;
+            color: #ff4b5c;
+            font-size: 1.1rem;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background-color: #ff4b5c;
+            color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Iconos simples con pseudo-elementos */
+        .boton::before {
+            content: "🩸"; /* Icono de sangre para todos los botones */
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Diferentes iconos para cada botón usando clases */
+        .agendar::before { content: "📅"; }
+        .historial::before { content: "📝"; }
+        .ver-bancos::before { content: "🏥"; }
+        .perfil::before { content: "👤"; }
+
+        @media (max-width: 480px) {
+            .botones {
+                grid-template-columns: 1fr;
+            }
+            .boton {
+                font-size: 1rem;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="bienvenida">Bienvenido a Donate Blood</h1>
+        <p>Accede a las funciones principales desde aquí.</p>
+
+        <div class="botones">
+            <a href="/verBancos" class="boton ver-bancos">Ver Bancos de Sangre</a>
+            <a href="/agendarCita" class="boton agendar">Agendar Cita</a>
+            <a href="/historial" class="boton historial">Historial de Donaciones</a>
+            <a href="/perfil" class="boton perfil">Perfil del Donante</a>
+        </div>
+    </div>
+     
+    <!--AQUI VAMOS TRATAR DE QUE DIIGA HOLA "USUARIO REGISTRADO"-->
+    <script>
+       
+        const nombreUsuario = "username"; 
+
+        
+        const encabezado = document.getElementById("bienvenida");
+        encabezado.textContent = `Bienvenido a Donate Blood, ${nombreUsuario}`;
+    </script>
+</body>
+</html>

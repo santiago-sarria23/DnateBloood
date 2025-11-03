@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login_register.css">
+    <title>Información del Proyecto - Donate Blood</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f36060;
+            color: #333;
+        }
+
+        header {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url('https://www.shutterstock.com/image-vector/poster-illustration-campaign-world-blood-600nw-2631405425.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            color: #b30000;
+            border-left: 6px solid #e63946;
+            padding-left: 10px;
+            margin-top: 25px;
+        }
+
+        p {
+            text-align: justify;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        strong {
+            color: #b30000;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #b30000, #e63946);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 60px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            background-color: #b30000;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-volver:hover {
+            background-color: #e63946;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+      <ul class="navbar-menu">
+          <li><a href="/">Inicio</a></li>
+          <li class="dropdown">
+              <a href="#" class="dropbtn">Usted es</a>
+              <ul class="dropdown-content">
+                  <li><a href="/logincentro">Centro Médico</a></li>
+                  <li><a href="/loginbanco">Banco de Sangre</a></li>
+                  <li><a href="/administrador">Administrador</a></li>
+              </ul>
+          </li>
+          <li><a href="/info">Información</a></li>
+          <li><a href="/contacto">Contáctanos</a></li>
+          <li><a href="/" class="navbar-btn">Inscríbete aquí</a></li>
+      </ul>
+  </nav>
+    <header>
+        <h1>Información del Proyecto: Donate Blood</h1>
+    </header>
+
+    <main>
+        <h2>¿De qué trata el proyecto?</h2>
+        <p>
+            El proyecto <strong>Donate Blood</strong> surge por la necesidad de mejorar la comunicación entre hospitales, bancos de sangre y donantes en la ciudad de Cartagena.
+            Muchas veces los hospitales no cuentan con suficiente sangre para atender emergencias o cirugías, y eso pone en riesgo la vida de muchos pacientes.
+        </p>
+
+        <h2>¿Por qué se creó?</h2>
+        <p>
+            Se creó con el objetivo de usar la tecnología como una herramienta para solucionar este problema. 
+            A través de una página o aplicación web desarrollada con <strong>HTML y Java</strong>, se busca conectar a los donantes con los centros de salud, 
+            permitiendo que se registren, reciban recordatorios y conozcan los lugares y fechas para donar. 
+            También ayudará a los hospitales a ver la disponibilidad de sangre en tiempo real.
+        </p>
+
+        <h2>Propósito del proyecto</h2>
+        <p>
+            Con <strong>Donate Blood</strong> se busca fomentar la solidaridad y crear conciencia sobre la importancia de donar sangre. 
+            El propósito es reducir la escasez, mejorar la atención médica y fortalecer la conexión entre hospitales y bancos de sangre, 
+            logrando que más personas donen y se salven más vidas gracias a una mejor organización.
+        </p>
+
+        <a href="#" class="btn-volver">Volver al inicio</a>
+    </main>
+
+    <footer>
+        <p>Proyecto Donate Blood © 2025 - Hecho por: Luis Manuel Miranda, Santiago Pérez, Jose Orozco, Santiago Sarria</p>
+    </footer>
+    <script>
+
+    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+        var btn = dropdown.querySelector('.dropbtn');
+        var content = dropdown.querySelector('.dropdown-content');
+            var hideTimeout;
+            dropdown.addEventListener('mouseenter', function() {
+                clearTimeout(hideTimeout);
+                content.style.display = 'block';
+            });
+            dropdown.addEventListener('mouseleave', function() {
+                hideTimeout = setTimeout(function() {
+                    content.style.display = 'none';
+                }, 1000);
+            });
+            btn.addEventListener('click', function(e) {
+                var isOpen = content.style.display === 'block';
+                document.querySelectorAll('.dropdown-content').forEach(function(dc) {
+                    dc.style.display = 'none';
+            });
+            content.style.display = isOpen ? 'none' : 'block';
+            e.preventDefault();
+            e.stopPropagation();
+            content.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    content.style.display = 'none';
+                });
+            });
+        });
+    });
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown-content').forEach(function(dc) {
+                dc.style.display = 'none';
+            });
+        }
+    });
+    </script>
+</body>
+</html>

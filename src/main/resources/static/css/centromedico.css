@@ -1,0 +1,65 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://efectodonacion.com/wp-content/uploads/2022/05/20220517-Unidad-Movil-Guimar.jpg');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+}
+
+
+h1 {
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px black;
+}
+
+
+form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #007bff;
+}
+
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

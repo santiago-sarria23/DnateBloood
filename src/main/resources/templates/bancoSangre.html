@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio de sesión</title>
+  <link rel="stylesheet" href="css/bancosangre.css">
+  <link rel="stylesheet" href="css/login_register.css">
+</head>
+<body>
+  <nav class="navbar">
+      <ul class="navbar-menu">
+          <li><a href="/">Inicio</a></li>
+          <li class="dropdown">
+              <a href="#" class="dropbtn">Usted es</a>
+              <ul class="dropdown-content">
+                  <li><a href="/logincentro">Centro Médico</a></li>
+                  <li><a href="/loginbanco">Banco de Sangre</a></li>
+                  <li><a href="/administrador">Administrador</a></li>
+              </ul>
+          </li>
+          <li><a href="/info">Información</a></li>
+          <li><a href="/contacto">Contáctanos</a></li>
+          <li><a href="/" class="navbar-btn">Inscríbete aquí</a></li>
+      </ul>
+  </nav>
+  <h1>Inicio de sesión</h1>
+
+  <form>
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario">
+
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña"> 
+
+    <button type="submit">Iniciar sesión</button>
+  </form>
+  <script>
+
+    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+        var btn = dropdown.querySelector('.dropbtn');
+        var content = dropdown.querySelector('.dropdown-content');
+            var hideTimeout;
+            dropdown.addEventListener('mouseenter', function() {
+                clearTimeout(hideTimeout);
+                content.style.display = 'block';
+            });
+            dropdown.addEventListener('mouseleave', function() {
+                hideTimeout = setTimeout(function() {
+                    content.style.display = 'none';
+                }, 1000);
+            });
+            btn.addEventListener('click', function(e) {
+                var isOpen = content.style.display === 'block';
+                document.querySelectorAll('.dropdown-content').forEach(function(dc) {
+                    dc.style.display = 'none';
+            });
+            content.style.display = isOpen ? 'none' : 'block';
+            e.preventDefault();
+            e.stopPropagation();
+            content.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    content.style.display = 'none';
+                });
+            });
+        });
+    });
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown-content').forEach(function(dc) {
+                dc.style.display = 'none';
+            });
+        }
+    });
+    </script>
+</body>
+</html>

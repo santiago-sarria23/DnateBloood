@@ -40,4 +40,9 @@ public class Router {
     public String verBancos() {
         return "verBancos";
     }
+    // panels
+    @GetMapping("/bancoSangre")
+    public String vistaBanco(){
+        return "bancoSangre.index";
+    }
 }

@@ -2,50 +2,50 @@ package com.donateblood.demo.model;
 
 public class Donante {
 
-    // private String nombre;
-    // private String direccion;
-    // private String telefono;
-    // private String tipoSangre;
+     private String nombre;
+     private String direccion;
+     private String telefono;
+     private String tipoSangre;
 
-    // public Donante() {
-    // }
+     public Donante() {
+     }
 
-    // public Donante(String nombre, String direccion, String telefono, String tipoSangre) {
-    //     this.nombre = nombre;
-    //     this.direccion = direccion;
-    //     this.telefono = telefono;
-    //     this.tipoSangre = tipoSangre;
-    // }
+    public Donante(String nombre, String direccion, String telefono, String tipoSangre) {
+         this.nombre = nombre;
+         this.direccion = direccion;
+        this.telefono = telefono;
+        this.tipoSangre = tipoSangre;
+     }
 
-    // public String getNombre() {
-    //     return nombre;
-    // }
+     public String getNombre() {
+         return nombre;
+     }
 
-    // public void setNombre(String nombre) {
-    //     this.nombre = nombre;
-    // }
+     public void setNombre(String nombre) {
+         this.nombre = nombre;
+     }
 
-    // public String getDireccion() {
-    //     return direccion;
-    // }
+     public String getDireccion() {
+        return direccion;
+     }
 
-    // public void setDireccion(String direccion) {
-    //     this.direccion = direccion;
-    // }
+     public void setDireccion(String direccion) {
+         this.direccion = direccion;
+     }
 
-    // public String getTelefono() {
-    //     return telefono;
-    // }
+     public String getTelefono() {
+         return telefono;
+     }
 
-    // public void setTelefono(String telefono) {
-    //     this.telefono = telefono;
-    // }
+     public void setTelefono(String telefono) {
+         this.telefono = telefono;
+     }
 
-    // public String getTipoSangre() {
-    //     return tipoSangre;
-    // }
+     public String getTipoSangre() {
+        return tipoSangre;
+     }
 
-    // public void setTipoSangre(String tipoSangre) {
-    //     this.tipoSangre = tipoSangre;
-    // }
+     public void setTipoSangre(String tipoSangre) {
+         this.tipoSangre = tipoSangre;
+     }
 }

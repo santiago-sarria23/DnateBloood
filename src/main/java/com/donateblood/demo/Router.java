@@ -23,8 +23,9 @@ public class Router {
 
     @GetMapping("/loginbanco")
     public String loginBanco() {
-        return "bancoSangre";
+    return "bancologin";
     }
+
 
     @GetMapping("/info")
     public String info() {

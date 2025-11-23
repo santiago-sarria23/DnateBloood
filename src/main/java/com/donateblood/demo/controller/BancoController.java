@@ -1,32 +1,70 @@
 package com.donateblood.demo.controller;
 
-import com.donateblood.demo.model.Banco;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/banco")
 public class BancoController {
 
-    private static final List<Banco> bancos = new ArrayList<>();
+    private static final String USER = "banco";
+    private static final String PASS = "1234";
 
-    @GetMapping
-    public String index(Model model) {
-        model.addAttribute("banco", new Banco());
-        model.addAttribute("bancos", bancos);
-        return "index";
+    // Aquí almacenamos las unidades por tipo de sangre
+    private static final Map<String, Integer> unidadesSangre = new HashMap<>();
+
+    // LOGIN ---------------------------------------------------------
+    @GetMapping("/login")
+    public String mostrarLogin() {
+        return "bancologin";
     }
 
-    @PostMapping("/agregar")
-    public String agregar(@ModelAttribute Banco banco) {
-        bancos.add(banco);
-        return "redirect:/";
+    @PostMapping("/login")
+    public String procesarLogin(
+            @RequestParam String username,
+            @RequestParam String password,
+            Model model) {
+
+        if (USER.equals(username) && PASS.equals(password)) {
+            return "redirect:/banco/panel";
+        }
+
+        model.addAttribute("error", "Usuario o contraseña incorrectos");
+        return "bancologin";
+    }
+
+    // PANEL ---------------------------------------------------------
+    @GetMapping("/panel")
+    public String panel() {
+        return "bancopanel";
+    }
+
+    // VER UNIDADES ---------------------------------------------------
+    @GetMapping("/unidades")
+    public String verUnidades(Model model) {
+        model.addAttribute("unidades", unidadesSangre);
+        return "banco_unidades";
+    }
+
+    // MODIFICAR UNIDADES ---------------------------------------------
+    @GetMapping("/modificar")
+    public String mostrarModificar(Model model) {
+        model.addAttribute("tipos", new String[]{
+                "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"
+        });
+        return "banco_modificar";
+    }
+
+    @PostMapping("/modificar")
+    public String guardarUnidades(
+            @RequestParam String tipo,
+            @RequestParam int cantidad) {
+
+        unidadesSangre.put(tipo, cantidad);
+        return "redirect:/banco/unidades";
     }
 }

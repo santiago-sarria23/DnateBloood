@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades Disponibles</title>
+    <link rel="stylesheet" href="/css/banco_panel.css">
+
+     <link rel="stylesheet" href="/visualizarunidades.css">
+
+
+</head>
+<body>
+
+<div class="panel-container">
+    <h1>Unidades Disponibles</h1>
+
+    <table>
+        <tr>
+            <th>Tipo de sangre</th>
+            <th>Cantidad</th>
+        </tr>
+
+        <tr th:each="entry : ${unidades}">
+            <td th:text="${entry.key}"></td>
+            <td th:text="${entry.value}"></td>
+        </tr>
+    </table>
+
+    <br>
+    <button onclick="window.location.href='/banco/panel'">Volver</button>
+
+</div>
+
+</body>
+</html>

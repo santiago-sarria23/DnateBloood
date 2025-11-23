@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Unidades</title>
+    <link rel="stylesheet" href="/css/banco_panel.css">
+
+    <link rel="stylesheet" href="/css/unidades.css">
+    
+
+
+</head>
+<body>
+
+<div class="panel-container">
+    <h1>Modificar Unidades de Sangre</h1>
+
+    <form action="/banco/modificar" method="POST">
+
+        <label>Tipo de sangre:</label>
+        <select name="tipo" required>
+            <option th:each="t : ${tipos}" th:value="${t}" th:text="${t}"></option>
+        </select>
+
+        <label>Cantidad disponible:</label>
+        <input type="number" name="cantidad" min="0" required>
+
+        <button type="submit">Guardar</button>
+    </form>
+
+</div>
+
+</body>
+</html>

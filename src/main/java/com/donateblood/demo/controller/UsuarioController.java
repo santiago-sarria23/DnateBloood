@@ -25,7 +25,7 @@ public class UsuarioController {
         usuarios.add(usuario);
         model.addAttribute("usuario", usuario);
         model.addAttribute("mensaje", "Registro exitoso. ¡Bienvenido!");
-        return "donantePanel";
+        return "paneles/donador/donantePanel";
     }
 
     @GetMapping("/login")
@@ -39,11 +39,11 @@ public class UsuarioController {
         for (Usuario u : usuarios) {
             if (u.getUsername().equals(usuario.getUsername()) && u.getPassword().equals(usuario.getPassword())) {
                 model.addAttribute("usuario", u);
-                return "donantePanel";
+                return "paneles/donador/donantePanel";
             }
         }
         model.addAttribute("error", "Usuario o contraseña incorrectos");
-        return "login";
+        return "logins/login";
     }
 }
 

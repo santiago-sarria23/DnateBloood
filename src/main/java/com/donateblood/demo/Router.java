@@ -7,29 +7,38 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class Router {
 
     @GetMapping("/")
-    public String login() {
-        return "login";
+    public String landing() {
+        return "vistasPagina/landing";
     }
 
-    @GetMapping("/administrador")
+    // @GetMapping("/login")
+    // public String login() {
+    //     return "logins/login";
+    // }
+
+    @GetMapping("/loginadministrador")
     public String loginAdmin() {
-        return "administrador";
+        return "logins/administradorLogin";
     }
 
     @GetMapping("/logincentro") 
     public String loginCentro() {
-        return "centroMedico";
+        return "logins/centroLogin";
     }
 
     @GetMapping("/loginbanco")
     public String loginBanco() {
-    return "bancologin";
+    return "logins/bancologin";
     }
 
+    // @GetMapping("/register")
+    // public String register() {
+    //     return "register/register";
+    // }
 
     @GetMapping("/info")
     public String info() {
-        return "info_donate";
+        return "vistasPagina/projectInfo";
     }
 
     @GetMapping("/contacto")

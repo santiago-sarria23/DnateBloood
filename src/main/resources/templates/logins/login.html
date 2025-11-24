@@ -1,0 +1,107 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <title>Donate blood 2.0</title>
+    <link rel="stylesheet" href="css/login_register.css">
+</head>
+<body>
+    <div class="main-container login_v">
+        <nav class="navbar">
+            <ul class="navbar-menu">
+                <li><a href="/">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Usted es</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/logincentro">Centro Médico</a></li>
+                        <li><a href="/loginbanco">Banco de Sangre</a></li>
+                        <li><a href="/loginadministrador">Administrador</a></li>
+                    </ul>
+
+                    <!--AQUI VAMOS HACER QUE NOS contacten como grupo ojo.-->
+                </li>
+                <li><a href="/info">Información</a></li>
+                <li><a href="https://wa.me/573133713175" target="_blank">Contáctanos</a></li>
+                <li><a href="/" class="navbar-btn">Inscríbete aquí</a></li>
+            </ul>
+        </nav>
+        <div class="formulario">
+            <h1>Iniciar sesión</h1>
+            <hr><br>
+
+            
+            <form method="post" action="/login">
+                <div class="username">
+                    <input type="text" name="username" required>
+                    <label>Usuario</label>
+                </div>
+                <div class="username">
+                    <input type="password" name="password" required>
+                    <label>Contraseña</label>
+                </div>
+
+                
+                <div style="color: red; margin: 10px 0;">
+                    <span th:if="${error}" th:text="${error}"></span>
+                </div>
+
+                <div class="recordar">Olvido su contraseña?</div>
+                <input type="submit" value="iniciar sesion">
+                <div class="registarse">
+                    ¿Todavía no tienes una cuenta? <a href="/register">registro</a>
+                </div>
+            </form>
+            <details class="requisitos">
+                <summary>Requisitos para donar</summary>
+                <ul>
+                    <li>Edad: Tener entre 18 y 65 años.</li>
+                    <li>Peso: Pesar al menos 50 kg.</li>
+                    <li>Salud: Estar en buen estado de salud general.</li>
+                    <li>Intervalo entre donaciones: Esperar al menos 8 semanas entre donaciones de sangre total.</li>
+                    <li>No estar embarazada ni amamantando.</li>
+                    <li>No tener enfermedades transmisibles por la sangre, como VIH o hepatitis B/C.</li>
+                    <li>No haber tenido tatuajes o piercings en los últimos 12 meses.</li>
+                    <li>No haber viajado a zonas con riesgo de enfermedades transmisibles por la sangre en los últimos 6 meses.</li>
+                    <li>No consumir drogas intravenosas ni tener comportamientos de alto riesgo.</li>
+                </ul>
+            </details>
+        </div>
+    </div>
+    <script>
+    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+        var btn = dropdown.querySelector('.dropbtn');
+        var content = dropdown.querySelector('.dropdown-content');
+            var hideTimeout;
+            dropdown.addEventListener('mouseenter', function() {
+                clearTimeout(hideTimeout);
+                content.style.display = 'block';
+            });
+            dropdown.addEventListener('mouseleave', function() {
+                hideTimeout = setTimeout(function() {
+                    content.style.display = 'none';
+                }, 1000);
+            });
+            btn.addEventListener('click', function(e) {
+                var isOpen = content.style.display === 'block';
+                document.querySelectorAll('.dropdown-content').forEach(function(dc) {
+                    dc.style.display = 'none';
+            });
+            content.style.display = isOpen ? 'none' : 'block';
+            e.preventDefault();
+            e.stopPropagation();
+            content.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    content.style.display = 'none';
+                });
+            });
+        });
+    });
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown-content').forEach(function(dc) {
+                dc.style.display = 'none';
+            });
+        }
+    });
+    </script>
+</body>
+</html>

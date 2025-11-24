@@ -17,7 +17,7 @@ public class UsuarioController {
     @GetMapping("/register")
     public String mostrarRegistro(Model model) {
         model.addAttribute("usuario", new Usuario());
-        return "register";
+        return "register/register";
     }
 
     @PostMapping("/register")
@@ -31,7 +31,7 @@ public class UsuarioController {
     @GetMapping("/login")
     public String mostrarLogin(Model model) {
         model.addAttribute("usuario", new Usuario());
-        return "login";
+        return "logins/login";
     }
 
     @PostMapping("/login")
